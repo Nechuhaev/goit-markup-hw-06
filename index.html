@@ -479,9 +479,19 @@
             placeholder="Введите текст"
           ></textarea>
           <div class="condition-checkbox">
-            <input type="checkbox" name="conditions" id="checkbox" />
-            <label for="checkbox" class="checkbox-text-field"
-              >Соглашаюсь с рассылкой и принимаю <a href="" class="link">Условия договора</a>
+            <input
+              type="checkbox"
+              name="conditions"
+              id="input-checkbox"
+              class="input-checkbox visually-hidden"
+            />
+            <label for="input-checkbox" class="checkbox-text-field">
+              <span>
+                <svg class="input-checkbox-img" width="13" height="10">
+                  <use href="./images/symbol-defs.svg#check-point"></use>
+                </svg>
+              </span>
+              Соглашаюсь с рассылкой и принимаю <a href="" class="link">Условия договора</a>
             </label>
           </div>
 

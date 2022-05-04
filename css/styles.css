@@ -936,13 +936,48 @@ textarea:focus-within {
   margin-left: 0;
   margin-right: 0;
 }
+
 .checkbox-text-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
-  padding-left: 7px;
+}
+
+.input-checkbox-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--primary-logo-color);
+  border-radius: 3px;
+  margin-right: 5px;
+  background-color: var(--accent-color);
+  fill: var(--primary-button-text-color);
+}
+
+.input-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-checkbox:checked + .checkbox-text-field span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 15px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 5px;
+  background-color: var(--accent-color);
+  fill: var(--primary-button-text-color);
 }
 
 .checkbox-text-field .link {
@@ -983,6 +1018,7 @@ textarea:focus-within {
   left: 12px;
   transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .form-field:focus-within > .icon-person,
