@@ -619,19 +619,21 @@ a {
   display: flex;
   width: 358px;
   height: 50px;
-  padding: 0;
+  padding: 0 0 0 16px;
+  color: var(--primary-button-text-color);
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+  outline: none;
 }
 
 .modal-input-subscription::placeholder {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
-  padding-left: 16px;
+  /* padding-left: 16px; */
   display: flex;
   align-items: center;
   letter-spacing: 0.03em;
@@ -665,6 +667,7 @@ a {
   display: flex;
   justify-content: center;
   margin-left: 10px;
+  fill: var(--primary-button-text-color);
 }
 
 /* Страница Портфолио */
@@ -854,6 +857,25 @@ a {
 .modal-close-vector {
   height: 11px;
   width: 11px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:hover > .modal-close-vector,
+.modal-close:focus > .modal-close-vector {
+  fill: var(--accent-color);
+}
+
+.modal-input {
+  display: flex;
+  width: 448px;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding-left: 42px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-title {
@@ -866,7 +888,9 @@ a {
   margin-bottom: 12px;
   color: var(--primary-text-color);
 }
-
+.form-field {
+  position: relative;
+}
 .label-name {
   display: block;
   font-weight: 400;
@@ -877,15 +901,6 @@ a {
   color: var(--secondary-text-color);
 }
 
-.modal-input {
-  display: block;
-  width: 100%;
-  height: 40px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-
 .user-comment-field {
   width: 100%;
   height: 120px;
@@ -894,14 +909,24 @@ a {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+  outline: none;
+  cursor: pointer;
 }
 
 textarea {
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+textarea::placeholder {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 12px;
+  line-height: 1.16;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
+}
+
+textarea:focus-within {
+  border-color: var(--accent-color);
 }
 
 .condition-checkbox {
@@ -950,4 +975,18 @@ textarea {
   border-radius: 4px;
   border: none;
   cursor: pointer;
+}
+
+.icon-person {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field:focus-within > .icon-person,
+.form-field:focus-within > .modal-input {
+  fill: var(--accent-color);
+  border-color: var(--accent-color);
 }
